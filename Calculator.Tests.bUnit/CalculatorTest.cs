@@ -2,13 +2,12 @@ using System;
 using Xunit;
 using Bunit;
 using Shouldly;
-using Bunit.Mocking.JSInterop;
 
 using Calculator.Core.Pages;
 
 namespace Calculator.Tests.bUnit
 {
-    public class CalculatorTest : ComponentTestFixture
+    public class CalculatorTest : TestContext
     {
         [Fact]
         public void AddingTwoNumbersProducesCorrectResult()
