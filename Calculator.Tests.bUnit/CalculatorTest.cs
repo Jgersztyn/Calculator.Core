@@ -7,14 +7,14 @@ using Calculator.Core.Pages;
 
 namespace Calculator.Tests.bUnit
 {
-    public class CalculatorTest : TestContext
+    public class CalculatorTest : BunitContext
     {
         [Fact]
         public void AddingTwoNumbersProducesCorrectResult()
         {
             // ASEEMBLE:
             // Renders the Counter component
-            var page = RenderComponent<CalculatorComponent>();
+            var page = Render<CalculatorComponent>();
 
             // ACT:
             // Use a Find to query the rendered DOM tree and find the button element
@@ -36,7 +36,7 @@ namespace Calculator.Tests.bUnit
         [Fact]
         public void SubtractingTwoNumbersProducesCorrectResult()
         {
-            var page = RenderComponent<CalculatorComponent>();
+            var page = Render<CalculatorComponent>();
 
             page.Find("#eight").Click();
 
@@ -52,7 +52,7 @@ namespace Calculator.Tests.bUnit
         [Fact]
         public void MultiplyingTwoNumbersProducesCorrectResult()
         {
-            var page = RenderComponent<CalculatorComponent>();
+            var page = Render<CalculatorComponent>();
 
             page.Find("#two").Click();
 
@@ -68,7 +68,7 @@ namespace Calculator.Tests.bUnit
         [Fact]
         public void DividingTwoNumbersProducesCorrectResult()
         {
-            var page = RenderComponent<CalculatorComponent>();
+            var page = Render<CalculatorComponent>();
 
             page.Find("#six").Click();
 
@@ -84,7 +84,7 @@ namespace Calculator.Tests.bUnit
         [Fact]
         public void ClearButtonRemovesAllValues()
         {
-            var page = RenderComponent<CalculatorComponent>();
+            var page = Render<CalculatorComponent>();
 
             page.Find("#six").Click();
 
@@ -103,7 +103,7 @@ namespace Calculator.Tests.bUnit
         [Fact]
         public void DivideByZeroProducesHelpfulMessage()
         {
-            var page = RenderComponent<CalculatorComponent>();
+            var page = Render<CalculatorComponent>();
 
             page.Find("#two").Click();
 
@@ -121,7 +121,7 @@ namespace Calculator.Tests.bUnit
         [Fact]
         public void ClickingOperatorBeforeAddingValueHasNoEffect()
         {
-            var page = RenderComponent<CalculatorComponent>();
+            var page = Render<CalculatorComponent>();
 
             page.Find("#divide").Click();
 
@@ -131,7 +131,7 @@ namespace Calculator.Tests.bUnit
         [Fact]
         public void ClickingOperatorResetsCurrentValueToZero()
         {
-            var page = RenderComponent<CalculatorComponent>();
+            var page = Render<CalculatorComponent>();
 
             page.Find("#five").Click();
 
@@ -143,7 +143,7 @@ namespace Calculator.Tests.bUnit
         [Fact]
         public void DecimalDoesNotAllowMultipleValues()
         {
-            var page = RenderComponent<CalculatorComponent>();
+            var page = Render<CalculatorComponent>();
 
             page.Find("#two").Click();
 
